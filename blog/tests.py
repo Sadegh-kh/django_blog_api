@@ -24,7 +24,7 @@ class PostTest(TestCase):
         )
 
     def test_post_model(self):
-        self.assertEqual(self.post.author, self.user)
-        self.assertEqual(self.post.title, "test title")
+        self.assertEquals(self.post.author, self.user)
+        self.assertEquals(self.post.title, "test title")
         self.assertEquals(self.post.description, "testing description")
         self.assertEquals(str(self.post), self.post.title)
