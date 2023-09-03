@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import viewsets
+from rest_framework.permissions import IsAdminUser
 
 # Create your views here.
 from .models import Post
@@ -16,3 +17,4 @@ class PostViewSetApi(viewsets.ModelViewSet):
 class UserViewSetApi(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
+    permission_classes = (IsAdminUser,)
