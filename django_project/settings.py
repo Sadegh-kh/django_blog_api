@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "dj_rest_auth",
     "dj_rest_auth.registration",
+    "drf_spectacular",
     # local
     "accounts.apps.AccountsConfig",
     "blog.apps.BlogConfig",
@@ -59,6 +60,12 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Blog Api Project",
+    "DESCRIPTION": "A sample blog project for learning drf",
+    "VERSION": "1.0.0",
 }
 REST_AUTH = {
     "SESSION_LOGIN": False,
